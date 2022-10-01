@@ -10,17 +10,30 @@ import SwiftUI
 
 struct GameView: View {
     
-    @ObservedObject var ttt = TTT()
+    @ObservedObject var t = T3()
     
     var body: some View {
-        Button {
-            ttt.toPosition(intPosition: pos)
-            pos += 1
-            print(ttt.table)
-        } label: {
-            Text("\(ttt.table[0][0])")
+        VStack {
+            JudgeView(t: t)
+                
+            HStack {
+                GameButton(t: t, position: 0)
+                GameButton(t: t, position: 1)
+                GameButton(t: t, position: 2)
+            }
+            
+            HStack {
+                GameButton(t: t, position: 3)
+                GameButton(t: t, position: 4)
+                GameButton(t: t, position: 5)
+            }
+            
+            HStack {
+                GameButton(t: t, position: 6)
+                GameButton(t: t, position: 7)
+                GameButton(t: t, position: 8)
+            }
         }
-
     }
 }
 

@@ -1,14 +1,21 @@
+//
+//  TTT.swift
+//  TickTackTooGame
+//
+//  Created by nekonlu on 2022/10/01.
+//  
+//
+
 import Foundation
 
-class T3 {
-    var table: [[Int]] = [
+class T3: ObservableObject {
+    @Published var table: [[Int]] = [
         [0, 0, 0],
         [0, 0, 0],
         [0, 0, 0]
     ]
-    var currentPlayerID = 0
-    var status: Int = 0
-    var turn: Int = 0
+    @Published var status: Int = 0
+    @Published var turn: Int = 0
     
     func pushedButton(position: Int) {
         updateTable(position: position)
